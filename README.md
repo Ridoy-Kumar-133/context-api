@@ -1,36 +1,160 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# React Context API Practice
 
-## Getting Started
+A beginner-friendly React/Next.js practice project focused on understanding and implementing the **Context API**.
 
-First, run the development server:
+## 📌 About The Project
+
+This project is created to learn how React Context API works and how shared data can be accessed by multiple components without passing props manually through every level.
+
+In this project, I practiced:
+
+* Creating a Context with `createContext()`
+* Creating a Context Provider
+* Passing data through the Provider
+* Using `children` inside a Provider
+* Accessing Context data with `useContext()`
+* Sharing state with Context API
+* Passing state values and state update functions through Context
+* Understanding the relationship between Provider and child components
+
+## 🛠️ Technologies Used
+
+* Next.js
+* React
+* TypeScript
+* JavaScript
+* Context API
+* Tailwind CSS
+
+## 📂 Project Structure
+
+```text
+src/
+├── app/
+│   ├── context/
+│   │   └── UserContext.tsx
+│   │
+│   ├── user/
+│   │   └── page.tsx
+│   │
+│   └── layout.tsx
+│
+└── ...
+```
+
+## 🧠 Context API Example
+
+The project creates a `UserContext` using `createContext()`:
+
+```tsx
+export const UserContext = createContext({});
+```
+
+The Provider shares user data and state:
+
+```tsx
+<UserContext.Provider value={is}>
+  {children}
+</UserContext.Provider>
+```
+
+The `value` contains:
+
+```tsx
+const is = {
+  count,
+  setCount,
+  increse,
+  setIncrease,
+  users,
+};
+```
+
+A child component can access the shared data using `useContext()`:
+
+```tsx
+const data = useContext(UserContext);
+
+const { users } = data;
+```
+
+Then the user information can be displayed:
+
+```tsx
+<h1>User name: {users.name}</h1>
+<h2>User age: {users.age}</h2>
+```
+
+## 🔄 How Context API Works
+
+```text
+createContext()
+      ↓
+Create Context
+      ↓
+Context Provider
+      ↓
+value={...}
+      ↓
+Child Components
+      ↓
+useContext()
+      ↓
+Access Shared Data
+```
+
+## 🚀 Getting Started
+
+Clone the repository:
+
+```bash
+git clone YOUR_REPOSITORY_URL
+```
+
+Go to the project directory:
+
+```bash
+cd YOUR_PROJECT_FOLDER
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open your browser and visit:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🎯 Learning Goal
 
-## Learn More
+The main goal of this project is to understand how Context API can be used to share data and state between components without manually passing props through every component.
 
-To learn more about Next.js, take a look at the following resources:
+## 📚 What I Learned
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Through this project, I learned:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. How to create a Context.
+2. How `createContext()` works.
+3. How `Provider` shares data.
+4. How `children` works inside a Provider.
+5. How `useContext()` retrieves shared data.
+6. How state and state update functions can be shared through Context.
+7. How Context can help reduce prop drilling.
 
-## Deploy on Vercel
+## 👨‍💻 Author
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Ridoy Kumar**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Aspiring Full-Stack Developer | React • Next.js • TypeScript
+
+GitHub: [Ridoy-Kumar-133](https://github.com/Ridoy-Kumar-133)
