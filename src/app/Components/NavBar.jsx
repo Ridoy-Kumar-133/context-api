@@ -3,11 +3,13 @@ import React from 'react';
 
 const NavBar = () => {
 
-    const links = <>
+    const links = <div className='flex gap-5'>
         <Link href= '/' ><li>Home</li></Link>
         <Link href= '/user' ><li>User</li></Link>
         <Link href= '/student' ><li>Student</li></Link>
-    </>
+    </div>
+        
+  
 
     return (
         <div className="navbar bg-base-100 shadow-sm">
