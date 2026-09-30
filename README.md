@@ -2,6 +2,8 @@
 
 A beginner-friendly React/Next.js practice project focused on understanding and implementing the **Context API**.
 
+#Live Link : https://context-api-prextice.netlify.app/
+
 ## 📌 About The Project
 
 This project is created to learn how React Context API works and how shared data can be accessed by multiple components without passing props manually through every level.
